@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I am going to use Nano because it's user friendly and lists the shortcuts.
 
 --
 
@@ -68,6 +68,6 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I will use Spyder because I like that it includes an editor as well as an integrated python shell. I have used RStudio before which I liked, and Spyder seems similar. A feature I like is the "variable explorer" which lists out all variables including the type, size, and value, in the environment. A useful keyboard shortcut is F5 which runs the program and ctrl+1 which comments out entire lines. There are lots of ways to customize the editor, I changed the syntax color scheme which is an option available under preferences. 
 
  
