@@ -18,7 +18,25 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    
+    if not isinstance(count, int):
+        print 'donuts is only defined for integers.'
+        return None
+    elif count < 0:
+        print 'donuts is only defined for positive integers'
+        return None
+    elif count >= 10:
+        return 'Number of donuts: many'
+    else:
+        return 'Number of donuts: ' + str(count)
+
+print donuts(4)
+print donuts(9)
+print donuts(10)
+print donuts(99)
+
+
+
 
 
 def both_ends(s):
@@ -37,7 +55,22 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    
+    if not isinstance(s, str):
+        print 'both_ends is only defined for strings'
+        return None
+    elif len(s) < 2:
+        return ''
+    else:
+        return str(s[:2] + s[-2:])
+
+print both_ends('spring')
+print both_ends('Hello')
+print both_ends('a')
+print both_ends('xyz')
+
+
+
 
 
 def fix_start(s):
@@ -56,7 +89,22 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    if not isinstance(s, str):
+        print 'fix_start is only defined for strings'
+        return None
+    elif len(s) < 1:
+        print 'fix_start is only defined for strings of length 1 or more'
+        return None
+    else:
+        return s[0] + s[1:].replace(s[0], '*')
+    
+print fix_start('babble')
+print fix_start('aardvark')
+print fix_start('google')
+print fix_start('donut')
+
+
+
 
 
 def mix_up(a, b):
@@ -74,7 +122,22 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    if not isinstance(a, str) or not isinstance(b, str):
+        print 'mix_up is only defined for strings'
+        return None
+    elif len(a) < 1 or len(b) < 1:
+        print 'mix_up is only defined for strings of length 1 or more'
+        return None
+    else:
+        return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
+
+print mix_up('mix', 'pod')
+print mix_up('dog', 'dinner')
+print mix_up('gnash', 'sport')
+print mix_up('pezzy', 'firm')
+
+
+
 
 
 def verbing(s):
@@ -91,9 +154,24 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if not isinstance(s, str):
+        print 'verbing is only defined for strings'
+        return None
+    elif len(s) < 3:
+        return s
+    elif s.endswith('ing'):
+        return s + 'ly'
+    else:
+        return s + 'ing'
+
+print verbing('hail')
+print verbing('swiming')
+print verbing('do')
+
+    
 
 
+    
 def not_bad(s):
     """
     Given a string, find the first appearance of the substring 'not'
@@ -111,9 +189,25 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    if not isinstance(s, str):
+        print 'not_bad is only defined for strings'
+        return None  
+    not_loc = s.find('not')
+    bad_loc = s.find('bad')
+    if bad_loc > not_loc and not_loc != -1:
+        return s.replace(s[not_loc:bad_loc + 3], 'good')
+    else:
+        return s
+
+print not_bad('This movie is not so bad')
+print not_bad('This dinner is not that bad!')
+print not_bad('This tea is not hot')
+print not_bad("It's bad yet not")
+    
 
 
+    
+    
 def front_back(a, b):
     """
     Consider dividing a string into two halves. If the length is even,
@@ -130,4 +224,17 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    if not isinstance(a, str) or not isinstance(b, str):
+        print 'front_back is only defined for strings'
+        return None
+    elif len(a) < 2 or len(b) < 2:
+        print 'front_back is only defined for strings of length 2 or more'
+        return None
+    else:
+        split_a = (len(a) + 1) / 2
+        split_b = (len(b) + 1) / 2
+        return a[:split_a] + b[:split_b] + a[split_a:] + b[split_b:]    
+
+print front_back('abcd', 'xy')
+print front_back('abcde', 'xyz')
+print front_back('Kitten', 'Donut')
