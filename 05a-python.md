@@ -12,7 +12,17 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Similarities:  
+* Both are a sequence of values  
+* Both use integer indexing  
+* Both support slicing, adding, multiplying, and checking for membership
+* Both can have values of any type  
+ 
+>> Differences:  
+* Tuples are immutable while lists are mutable (elements of a tuple cannot be modified)  
+* Tuples are enclosed in parentheses while lists are enclosed in square brackets  
+
+>> Dictionary keys must be immutable so only tuples will work as dictionary keys.
 
 ---
 
@@ -20,16 +30,39 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Similarities:  
+* Both are a sequence of values  
+* Both objects are mutable   
+ 
+>> Differences:  
+* A set is unordered while a list uses integer indexing  
+* The elements of a set are unique while lists can have duplicates  
+* Sets are enclosed in curly brackets while lists are enclosed in square brackets  
 
+>>Example:
+```python
+my_string = 'Difference between sets and lists'
+my_set = set(my_string)
+my_list = list(my_string)
+print my_set
+set(['a', ' ', 'c', 'b', 'e', 'D', 'f', 'i', 'l', 'n', 's', 'r', 't', 'w', 'd'])
+print my_list
+['D', 'i', 'f', 'f', 'e', 'r', 'e', 'n', 'c', 'e', ' ', 'b', 'e', 't', 'w', 'e', 'e', 'n', ' ', 's', 'e', 't', 's', ' ', 'a', 'n', 'd', ' ', 'l', 'i', 's', 't', 's']
+```
+
+>> Finding an element in a set is faster than a list because lists use a linear search algorithm while sets use a hashtable algorithm. Unlike sets, the longer the list, the longer the search time.    
 ---
 
 ###Q3. Lambda Function
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> A `lambda` function, also called an anonymous function, is a function which is defined for one time use without a name. This is useful when you would like to create a quick and simple function without having to seperately define it for use.  
 
+>> When using the `sorted()` function, the `key` parameter is used to specify a function to be called on each list element before sorting.  
+```python
+
+```
 ---
 
 ###Q4. List Comprehension, Map &amp; Filter
