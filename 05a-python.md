@@ -39,18 +39,19 @@ How are Python lists and sets similar and different? Give examples of using both
 * The elements of a set are unique while lists can have duplicates  
 * Sets are enclosed in curly brackets while lists are enclosed in square brackets  
 
->>Example:
+>>Finding an element in a set is faster than a list because lists use a linear search algorithm while sets use a hashtable algorithm. Unlike sets, the longer the list, the longer the search time.
+>>Example:  
 ```python
-my_string = 'Difference between sets and lists'
+my_string = 'sets and lists'
 my_set = set(my_string)
 my_list = list(my_string)
 print my_set
-set(['a', ' ', 'c', 'b', 'e', 'D', 'f', 'i', 'l', 'n', 's', 'r', 't', 'w', 'd'])
 print my_list
-['D', 'i', 'f', 'f', 'e', 'r', 'e', 'n', 'c', 'e', ' ', 'b', 'e', 't', 'w', 'e', 'e', 'n', ' ', 's', 'e', 't', 's', ' ', 'a', 'n', 'd', ' ', 'l', 'i', 's', 't', 's']
-```
-
->> Finding an element in a set is faster than a list because lists use a linear search algorithm while sets use a hashtable algorithm. Unlike sets, the longer the list, the longer the search time.    
+```  
+```python
+set(['a', ' ', 'e', 'd', 'i', 'l', 'n', 's', 't'])
+['s', 'e', 't', 's', ' ', 'a', 'n', 'd', ' ', 'l', 'i', 's', 't', 's']
+``` 
 ---
 
 ###Q3. Lambda Function
@@ -61,15 +62,45 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 >> When using the `sorted()` function, the `key` parameter is used to specify a function to be called on each list element before sorting.  
 ```python
-
-```
+sorted([11, -2, 7, -43, -15, 4], key=lambda x: abs(x))
+```  
+```python
+[-2, 4, 7, 11, -15, -43]
+```  
 ---
 
 ###Q4. List Comprehension, Map &amp; Filter
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions are a tool to construct a list from an iterator such as another list. You could use map and filter to contruct a list in the same way, however using list comprehensions can be more concise and easier to read. For example to create a list which doubles the even numbers of a list of integers called `numbers`, you can use either of the following ways:
+```python
+numbers = [6, 10, 4, 7, 4]
+double_evens_mf = map(lambda n: n * 2, filter(lambda n: n % 2 == 0, numbers))
+double_evens_lc = [n * 2 for n in numbers if n % 2 == 0]
+print double_numbers_mf
+print double_numbers_lc
+```  
+```python
+[12, 20, 8, 8]
+[12, 20, 8, 8]
+```  
+Set comprehensions work the same way as lists comprehensions. You just replace the square bracket syntax for lists with the curly bracket used for sets:
+```python
+double_evens_set = {n * 2 for n in numbers if n % 2 == 0}
+print double_evens_set
+```  
+```python
+set([8, 20, 12])
+```  
+To create a dictionary, use the same syntax as a set, but specify the key:
+```python
+double_evens_dict = {n: n * 2 for n in numbers if n % 2 == 0}
+print double_evens_dict
+```  
+```python
+ {10: 20, 4: 8, 6: 12}
+ ```
 
 ---
 
