@@ -9,7 +9,7 @@ print emails
 
 csvfile = "emails.csv"
 
-with open(csvfile, "w") as output:
+with open(csvfile) as output:
     writer = csv.writer(output, lineterminator='\n')
     for email in emails:
         writer.writerow([email]) 
