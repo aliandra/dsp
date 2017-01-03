@@ -77,16 +77,50 @@ This is a classic example of hypothesis testing using the normal distribution.  
 
 Bayes' Theorem is an important tool in understanding what we really know, given evidence of other information we have, in a quantitative way.  It helps incorporate conditional probabilities into our conclusions.
 
-Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
+Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Essentially this question is asking what is the probability that Elvis was an identical twin given that we know he was a twin?
+
+Using Bayes' Theorem, we know that  
+P(A|B) = (P(A)*P(B|A)) / P(B)
+
+Where  
+A: identical twin  
+B: twin
+
+We can rewrite this as    
+P(identical | twin) = (P(identical) * P( twin | identical)) / P(twin) 
+
+```python
+# P(fraternal twin)
+fraternal = 1.0 / 125
+
+# P(identical twin)
+identical = 1.0 / 300
+
+# P(twin) - twins are either identical or fraternal
+twin = fraternal + identical
+
+# P(twin | identical twin) - an identical twin is always a twin
+twin_given_iden = 1.0
+
+# P(identical twin | twin)
+iden_given_twin = (identical * twin_given_iden) / twin
+
+print 'The probability that Elvis was an identical twin is',
+print round((iden_given_twin * 100), 2), '%'
+```
+Running the above we get:
+```
+"The probability that Elvis was an identical twin is 29.41 %"
+```
 
 ---
 
 ###Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> In frequentist statistics, the parameters are fixed. It assumes that there is some true hypothesis from which we sample our observed data. An event's probability is the limit of its relative frequency in a large number of trials. In Bayesian Statistics, probability is a measure of the state of knowledge. Parameters are unknown and probabilities are assigned to a hypothesis based on prior observed data where available. The probability can then be updated after observing new data.
 
 ---
 
