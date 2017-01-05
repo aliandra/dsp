@@ -49,4 +49,4 @@ The mean of the actual distribution is 1.024.
 
 The mean of the biased distribution is 2.404.
 ```
-![Q2pmf](img/Q2pmf.png)
+![Q2pmf](dsp/img/Q2pmf.png)
