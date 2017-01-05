@@ -27,6 +27,6 @@ thinkplot.Config(xlabel='value', ylabel='cdf')
 thinkplot.Show()
 ```
 
-![Q3random](dsp/img/Q3random.png)
+![Q3random](https://github.com/aliandra/dsp/blob/master/img/Q3random.png?raw=true)
 
 By graphing the PMF and CDF we can see that the distribution is uniform. In the PMF plot, each value is the same length indicating they areequally likely to be observed. In the cdf plot, we see the an approximate straight line, indicating a uniform distribution of percentile ranks.
