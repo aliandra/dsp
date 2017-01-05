@@ -79,17 +79,8 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.
 
->> Essentially this question is asking what is the probability that Elvis was an identical twin given that we know he was a twin?
-
-Using Bayes' Theorem, we know that  
-P(A|B) = (P(A)*P(B|A)) / P(B)
-
-Where  
-A: identical twin  
-B: twin
-
-We can rewrite this as    
-P(identical | twin) = (P(identical) * P( twin | identical)) / P(twin) 
+>> Essentially this question is asking "What is the probability that Elvis was an identical twin given that we know he was a twin?" Using Bayes' Theorem, we know that P(A|B) = (P(A)*P(B|A)) / P(B) where A = identical twin and B = twin. We can rewrite this as:  
+P(identical | twin) = (P(identical) * P( twin | identical)) / P(twin)  
 
 ```python
 # P(fraternal twin)
@@ -110,7 +101,8 @@ iden_given_twin = (identical * twin_given_iden) / twin
 print 'The probability that Elvis was an identical twin is',
 print round((iden_given_twin * 100), 2), '%'
 ```
-Running the above we get:
+>> Running the above we get:  
+
 ```
 "The probability that Elvis was an identical twin is 29.41 %"
 ```
