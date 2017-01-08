@@ -4,10 +4,10 @@
 
 def donuts(count):
     """
-    Given an int count of a number of donuts, return a string of the
-    form 'Number of donuts: <count>', where <count> is the number
-    passed in. However, if the count is 10 or more, then use the word
-    'many' instead of the actual count.
+    Given an int count of a number of donuts, return a string of the form
+    'Number of donuts: <count>', where <count> is the number passed in.
+    However, if the count is 10 or more, then use the word 'many' instead of
+    the actual count.
 
     >>> donuts(4)
     'Number of donuts: 4'
@@ -18,7 +18,7 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    
+
     if not isinstance(count, int):
         print 'donuts is only defined for integers.'
         return None
@@ -30,21 +30,12 @@ def donuts(count):
     else:
         return 'Number of donuts: ' + str(count)
 
-print donuts(4)
-print donuts(9)
-print donuts(10)
-print donuts(99)
-
-
-
-
 
 def both_ends(s):
     """
-    Given a string s, return a string made of the first 2 and the last
-    2 chars of the original string, so 'spring' yields 'spng'.
-    However, if the string length is less than 2, return instead the
-    empty string.
+    Given a string s, return a string made of the first 2 and the last 2 chars
+    of the original string, so 'spring' yields 'spng'. However, if the string
+    length is less than 2, return instead the empty string.
 
     >>> both_ends('spring')
     'spng'
@@ -55,7 +46,7 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    
+
     if not isinstance(s, str):
         print 'both_ends is only defined for strings'
         return None
@@ -64,21 +55,12 @@ def both_ends(s):
     else:
         return str(s[:2] + s[-2:])
 
-print both_ends('spring')
-print both_ends('Hello')
-print both_ends('a')
-print both_ends('xyz')
-
-
-
-
 
 def fix_start(s):
     """
-    Given a string s, return a string where all occurences of its
-    first char have been changed to '*', except do not change the
-    first char itself. e.g. 'babble' yields 'ba**le' Assume that the
-    string is length 1 or more.
+    Given a string s, return a string where all occurences of its first char
+    have been changed to '*', except do not change the first char itself. e.g.
+    'babble' yields 'ba**le' Assume that the string is length 1 or more.
 
     >>> fix_start('babble')
     'ba**le'
@@ -97,21 +79,13 @@ def fix_start(s):
         return None
     else:
         return s[0] + s[1:].replace(s[0], '*')
-    
-print fix_start('babble')
-print fix_start('aardvark')
-print fix_start('google')
-print fix_start('donut')
-
-
-
 
 
 def mix_up(a, b):
     """
-    Given strings a and b, return a single string with a and b
-    separated by a space '<a> <b>', except swap the first 2 chars of
-    each string. Assume a and b are length 2 or more.
+    Given strings a and b, return a single string with a and b separated by a
+    space '<a> <b>', except swap the first 2 chars of each string. Assume a
+    and b are length 2 or more.
 
     >>> mix_up('mix', 'pod')
     'pox mid'
@@ -131,21 +105,12 @@ def mix_up(a, b):
     else:
         return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
 
-print mix_up('mix', 'pod')
-print mix_up('dog', 'dinner')
-print mix_up('gnash', 'sport')
-print mix_up('pezzy', 'firm')
-
-
-
-
 
 def verbing(s):
     """
-    Given a string, if its length is at least 3, add 'ing' to its end.
-    Unless it already ends in 'ing', in which case add 'ly' instead.
-    If the string length is less than 3, leave it unchanged. Return
-    the resulting string.
+    Given a string, if its length is at least 3, add 'ing' to its end. Unless
+    it already ends in 'ing', in which case add 'ly' instead. If the string
+    length is less than 3, leave it unchanged. Return the resulting string.
 
     >>> verbing('hail')
     'hailing'
@@ -164,21 +129,13 @@ def verbing(s):
     else:
         return s + 'ing'
 
-print verbing('hail')
-print verbing('swiming')
-print verbing('do')
 
-    
-
-
-    
 def not_bad(s):
     """
-    Given a string, find the first appearance of the substring 'not'
-    and 'bad'. If the 'bad' follows the 'not', replace the whole
-    'not'...'bad' substring with 'good'. Return the resulting string.
-    So 'This dinner is not that bad!' yields: 'This dinner is
-    good!'
+    Given a string, find the first appearance of the substring 'not' and 
+    'bad'. If the 'bad' follows the 'not', replace the whole 'not'...'bad'
+    substring with 'good'. Return the resulting string. So 'This dinner is not
+    that bad!' yields: 'This dinner is good!'
 
     >>> not_bad('This movie is not so bad')
     'This movie is good'
@@ -191,7 +148,7 @@ def not_bad(s):
     """
     if not isinstance(s, str):
         print 'not_bad is only defined for strings'
-        return None  
+        return None
     not_loc = s.find('not')
     bad_loc = s.find('bad')
     if bad_loc > not_loc and not_loc != -1:
@@ -199,23 +156,14 @@ def not_bad(s):
     else:
         return s
 
-print not_bad('This movie is not so bad')
-print not_bad('This dinner is not that bad!')
-print not_bad('This tea is not hot')
-print not_bad("It's bad yet not")
-    
 
-
-    
-    
 def front_back(a, b):
     """
-    Consider dividing a string into two halves. If the length is even,
-    the front and back halves are the same length. If the length is
-    odd, we'll say that the extra char goes in the front half. e.g.
-    'abcde', the front half is 'abc', the back half 'de'. Given 2
-    strings, a and b, return a string of the form a-front + b-front +
-    a-back + b-back
+    Consider dividing a string into two halves. If the length is even, the 
+    front and back halves are the same length. If the length is odd, we'll say
+    that the extra char goes in the front half. e.g. 'abcde', the front half
+    is 'abc', the back half 'de'. Given 2 strings, a and b, return a string of
+    the form a-front + b-front + a-back + b-back
 
     >>> front_back('abcd', 'xy')
     'abxcdy'
@@ -233,8 +181,32 @@ def front_back(a, b):
     else:
         split_a = (len(a) + 1) / 2
         split_b = (len(b) + 1) / 2
-        return a[:split_a] + b[:split_b] + a[split_a:] + b[split_b:]    
+        return a[:split_a] + b[:split_b] + a[split_a:] + b[split_b:]
 
+
+print donuts(4)
+print donuts(9)
+print donuts(10)
+print donuts(99)
+print both_ends('spring')
+print both_ends('Hello')
+print both_ends('a')
+print both_ends('xyz')
+print fix_start('babble')
+print fix_start('aardvark')
+print fix_start('google')
+print fix_start('donut')
+print mix_up('mix', 'pod')
+print mix_up('dog', 'dinner')
+print mix_up('gnash', 'sport')
+print mix_up('pezzy', 'firm')
+print verbing('hail')
+print verbing('swiming')
+print verbing('do')
+print not_bad('This movie is not so bad')
+print not_bad('This dinner is not that bad!')
+print not_bad('This tea is not hot')
+print not_bad("It's bad yet not")
 print front_back('abcd', 'xy')
 print front_back('abcde', 'xyz')
 print front_back('Kitten', 'Donut')

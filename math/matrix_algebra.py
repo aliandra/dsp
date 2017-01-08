@@ -25,16 +25,14 @@ print "alpha * u =", alpha * u, "\n"
 print "u * v =", np.dot(u, v.T), "(dot product)\n"
 print "||u|| =", np.linalg.norm(u), "\n"
 
-# 3. 
-print "A + C is not defined\n" # A + C
+# 3. Matrix Operations
+print "A + C is not defined\n"        # A + C
 print "A - C^T =", A - C.T, "\n"
 print "C^T + 3D =", C.T + (3 * D), "\n"
 print "BA =", np.matmul(B, A), "\n"
-print "B(A^T) is not defined\n" # np.matmul(B, A.T)
-print "BC is not defined\n" # np.matmul(B, C)
+print "B(A^T) is not defined\n"       # np.matmul(B, A.T)
+print "BC is not defined\n"           # np.matmul(B, C)
 print "CB =", np.matmul(C, B), "\n"
 print "B^4 =", np.linalg.matrix_power(B, 4), "\n"
 print "A(A^T) =", np.matmul(A, A.T), "\n"
 print "(D^T)D =", np.matmul(D.T, D), "\n"
-
-
